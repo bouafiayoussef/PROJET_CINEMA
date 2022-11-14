@@ -8,6 +8,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 //la creation d'une APIRest pour chaque entite a l'aide de SpringDataRest (il suffit d'ajouter cette annotation)
 
 @RepositoryRestResource   // ca veut dire que vous dites toutes le methodes que vous avez herite de JPA repository ils sont accessible via une API rest
-
+//http://localhost:8080/categories?page=0&size=2&sort=name,desc
 public interface CategoryRepository extends JpaRepository<Categorie,Long> {
 }
