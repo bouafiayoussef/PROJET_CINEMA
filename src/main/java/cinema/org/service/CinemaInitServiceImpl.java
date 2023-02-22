@@ -108,7 +108,7 @@ public class CinemaInitServiceImpl implements ICinemaInitService{
     public void initFilms() {
       double[] durees = new double[]{1,1.15,1.3,2,2.3,3};
         List<Categorie> categories =categoryRepository.findAll();
-        Stream.of("MALEFIQUE"," NUIT MAGIQUE","C'EST LA VIE","WAKANDA FOREVER","ECANTO","ARTEMIS FOWL").forEach(a->{
+        Stream.of("MALEFIQUE"," NUIT MAGIQUE","C'EST LA VIE","WAKANDA FOREVER","ECANTO","ARTEMIS FOWL","TAXI 5").forEach(a->{
             Film film= new Film();
             film.setTitre(a);
             film.setDuree(durees[new Random().nextInt(durees.length)]);
