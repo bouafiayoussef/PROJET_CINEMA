@@ -23,7 +23,7 @@ public class Film {
     private double duree;
     private String photo;
     @OneToMany(mappedBy = "film")
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // on a pas besoin d'afficher la projection + l'erreur de boucle infine => un film se fait dans une projection , une projection contient un film , se film projecter dans une projection
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // on a pas besoin d'afficher la projection + l'erreur de boucle infine => un film se fait dans une projection , une projection contient un film , se film projecter dans une projection
     private Collection<Projection> projections;
     @ManyToOne
     private Categorie categorie;

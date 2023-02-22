@@ -1,5 +1,6 @@
 package cinema.org.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,6 @@ public class Salle {
     private int nombrePlaces;
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-
     private Cinema cinema ;
 
     @OneToMany(mappedBy = "salle")

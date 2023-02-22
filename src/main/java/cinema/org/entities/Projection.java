@@ -1,6 +1,7 @@
 package cinema.org.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,10 +20,12 @@ public class Projection {
     private Date dateProjection;
     private double prix;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Salle salle;
     @ManyToOne
     private Film film;
     @OneToMany(mappedBy = "projection")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Ticket> tickets;
     @ManyToOne  // la projection se déroule dans une seance
     private Seance seance;
